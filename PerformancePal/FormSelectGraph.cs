@@ -163,6 +163,11 @@ namespace PerformancePal
             return dataValues;
         }
 
+        /// <summary>
+        /// Create a basic analysis comprising of the max and min values of the dataset selected.
+        /// </summary>
+        /// <param name="data">The dataset which is selected</param>
+        /// <returns>A string value ->  the analysis </returns>
         public string createAnalysis(List<int> data)
         {
             string meanStatement = "The mean value of " + getSelectedField() + " for " + this.selectedTemplate + " is " + getMean(data) + ".";
@@ -173,25 +178,50 @@ namespace PerformancePal
             return meanStatement + "\n" + sdDeviationStatement + "\n" + maxMinStatement;
         }
 
+        /// <summary>
+        /// Return the mean value of a particular dataset.
+        /// </summary>
+        /// <param name="data"> the data set for which the mean is to be calculated.</param>
+        /// <returns>The mean value of type double </returns>
         public static double getMean(List<int> data)
         {
             return data.Average();
 
         }
 
+        /// <summary>
+        /// Return the standard deviation of a particular dataset.
+        /// </summary>
+        /// <param name="data"> The data set for which the standard devuation is to be calculated</param>
+        /// <returns> The standard deviation of type double.</returns>
         public static double getStandardDeviation(List<int> data)
         {
             double average = data.Average();
             double sum = data.Sum(d => Math.Pow(d - average, 2));
-            return Math.Sqrt((sum) / data.Count());
+            return Math.Round(Math.Sqrt((sum) / data.Count()), 4);
         }
 
+        /// <summary>
+        /// Return the z-score for a particular value to check if the value os unusual for a dataset.
+        /// </summary>
+        /// <param name="value"> The integer value </param>
+        /// <param name="mean"></param>
+        /// <param name="standardDeviation"></param>
+        /// <returns>The z score value of type double</returns>
         public static double getZScore(int value, double mean, double standardDeviation)
         {
-            double zScore = (value - mean) / standardDeviation;
+            double zScore = Math.Round(((value - mean) / standardDeviation), 4);
             return zScore;
         }
 
+        /// <summary>
+        /// Create analysis for the outliers for a certain dataset.
+        /// </summary>
+        /// <param name="mean"> The mean of the dataset</param>
+        /// <param name="standardDeviation"> The standard deviation of that dataset</param>
+        /// <param name="data"> The dataset that the user saved over time</param>
+        /// <param name="date"> The date values for that particular datasets</param>
+        /// <returns>A string value</returns>
         public string checkOutliers(double mean, double standardDeviation, List<int> data, List<string> date)
         {
             List<int> dataWithoutOutliers = new List<int>();

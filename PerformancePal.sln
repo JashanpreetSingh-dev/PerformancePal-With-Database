@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformancePal", "PerformancePal\PerformancePal.csproj", "{AD6CCD59-4CED-4583-83F1-0F882763AEB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformancePalUnitTests", "PerformancePalUnitTests\PerformancePalUnitTests.csproj", "{DC1470A0-79A6-461F-B985-3A60FED7EB41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AD6CCD59-4CED-4583-83F1-0F882763AEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD6CCD59-4CED-4583-83F1-0F882763AEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD6CCD59-4CED-4583-83F1-0F882763AEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1470A0-79A6-461F-B985-3A60FED7EB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1470A0-79A6-461F-B985-3A60FED7EB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1470A0-79A6-461F-B985-3A60FED7EB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1470A0-79A6-461F-B985-3A60FED7EB41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
